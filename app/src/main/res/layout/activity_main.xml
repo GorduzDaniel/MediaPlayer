@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context="com.musicplayer.MainActivity">
+
+    <!-- A RecyclerView with some commonly used attributes -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Playlist"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textColor="#000"
+        android:id="@+id/textView"
+        android:background="@color/colorPrimary"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentBottom="true" />
+
+
+    <RelativeLayout
+        android:id="@+id/bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:id="@+id/small_image"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:padding="3dp" />
+
+        <TextView
+            android:id="@+id/small_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/small_previous"
+            android:layout_toRightOf="@+id/small_image"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:padding="3dp"
+            android:scrollHorizontally="true"
+            android:text="Title"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/small_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/small_title"
+            android:layout_toLeftOf="@+id/small_previous"
+            android:layout_toRightOf="@+id/small_image"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:padding="3dp"
+            android:scrollHorizontally="true"
+            android:text="Artist"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/small_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duration"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"/>
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/small_image"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageButton
+            android:id="@+id/small_next"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:padding="10dp"
+            android:src="@drawable/playnext1" />
+
+        <ImageButton
+            android:id="@+id/small_play"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignTop="@+id/small_next"
+            android:layout_marginLeft="5dp"
+            android:layout_toLeftOf="@+id/small_next"
+            android:layout_toStartOf="@+id/small_next"
+            android:background="@null"
+            android:padding="10dp"
+            android:src="@drawable/playsmall" />
+
+        <ImageButton
+            android:id="@+id/small_pause"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignTop="@+id/small_next"
+            android:layout_marginLeft="5dp"
+            android:layout_toLeftOf="@+id/small_next"
+            android:layout_toStartOf="@+id/small_next"
+            android:background="@null"
+            android:padding="10dp"
+            android:src="@drawable/pause1"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/small_previous"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/small_play"
+            android:layout_toStartOf="@+id/small_play"
+            android:background="@null"
+            android:padding="10dp"
+            android:src="@drawable/playprevious1" />
+
+        <TextView
+            android:id="@+id/progress_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="Duration"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"/>
+    </RelativeLayout>
+</RelativeLayout>
